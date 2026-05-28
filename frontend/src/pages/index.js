@@ -1,0 +1,8 @@
+export { Login } from './Login';
+export { Register } from './Register';
+export { DashboardPage } from './DashboardPage';
+export { DockerPage } from './DockerPage';
+export { IncidentsPage } from './IncidentsPage';
+export { DeploymentsPage } from './DeploymentsPage';
+export { SettingsPage } from './SettingsPage';
+export { AIAssistantPage } from './AIAssistantPage';
