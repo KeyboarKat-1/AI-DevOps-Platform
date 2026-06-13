@@ -1,72 +1,74 @@
 # AI DevOps Platform 🚀
 
-A modern AI-powered DevOps monitoring platform built using React, FastAPI, Docker, and Python.
+A modern AI-powered DevOps monitoring platform built using **React, FastAPI, Docker, and Python**.
 
-## 🔥 Features
+## 🌐 Live Demo
 
-- Real-time System Monitoring
-- CPU / RAM / Disk Usage Tracking
-- Docker Container Monitoring
-- Docker Container Controls
-- Live Logs Viewer
-- AI Insights & Recommendations
-- JWT Authentication
-- Professional Dark Dashboard UI
-- Real-time Metrics Refresh
-- Error Handling & Stable Architecture
+🔗 **Try it here:** https://ai-devops-platform-3.onrender.com
 
----
+> **Note:** Hosted on Render's free tier. The first request may take 30–60 seconds if the backend is waking up.
 
-# 🛠 Tech Stack
+## ✨ Features
 
-## Frontend
-- React
-- Vite
-- Tailwind CSS
-- Axios
+* 📊 Real-time System Monitoring
+* 🖥️ CPU, RAM & Disk Usage Tracking
+* 🐳 Docker Container Monitoring
+* 📜 Live Container Logs Viewer
+* 🤖 AI Insights & Recommendations
+* 🔐 JWT Authentication
+* 🌙 Professional Dark Dashboard UI
+* 🔄 Real-time Metrics Refresh
 
-## Backend
-- FastAPI
-- Python
-- JWT Authentication
-- Docker SDK
+## 🛠️ Tech Stack
 
-## DevOps
-- Docker
-- GitHub
-- Render
-- Vercel
+**Frontend**
 
----
+* React
+* Vite
+* Tailwind CSS
+* Axios
 
-# 📊 Monitoring Features
+**Backend**
 
-- CPU Usage Monitoring
-- RAM Usage Monitoring
-- Disk Usage Monitoring
-- Docker Container Status
-- Container Logs Viewer
-- Container Start/Stop/Delete Controls
+* FastAPI
+* Python
+* JWT Authentication
+* Docker SDK
 
----
+**DevOps**
 
-# 🔐 Authentication
+* Docker
+* GitHub
+* Render
 
-- Login-based Authentication
-- JWT Token Security
-- Protected Dashboard Routes
+## 🔐 Authentication
 
-> Note:
-> Public registration is intentionally disabled.
-> Access is controlled through admin-created accounts.
+* Login-based Authentication
+* JWT Token Security
+* Protected Dashboard Routes
 
----
+> Public registration is intentionally disabled. Access is managed through admin-created accounts.
 
-# 🚀 Installation
+## 🚀 Run Locally
 
-## Frontend Setup
+### Frontend
 
 ```bash
 cd frontend
 npm install
 npm run dev
+```
+
+### Backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+## 👨‍💻 Contributors
+
+* Anusha Vatala (@KeyboarKat-1)
+
+⭐ If you found this project useful, consider giving it a star!
