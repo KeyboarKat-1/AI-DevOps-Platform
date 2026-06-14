@@ -11,7 +11,9 @@ from app.api.deployment_routes import router as deployment_router
 from app.api.incident_routes import router as incident_router
 from app.api.metrics_routes import router as metrics_router
 from app.api.insights_routes import router as insights_router
+from app.api.agent_insights_routes import router as agent_insights_router
 from app.api.docker_routes import router as docker_router
+from app.api.agent_metrics_routes import router as agent_metrics_router
 from app.models.user import User
 from app.schemas.auth import Token
 from app.schemas.user import UserCreate, UserProfile, UserUpdate, ProfileUpdateResponse
@@ -47,6 +49,8 @@ router.include_router(incident_router)
 router.include_router(metrics_router)
 router.include_router(insights_router)
 router.include_router(docker_router)
+router.include_router(agent_metrics_router)  # Agent-based monitoring routes
+router.include_router(agent_insights_router)  # Agent-specific AI insights
 
 
 @router.post("/register")

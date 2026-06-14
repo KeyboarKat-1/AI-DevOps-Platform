@@ -14,6 +14,8 @@ from app.db.session import engine
 from app.models.user import User  # Import models so SQLAlchemy metadata is registered
 from app.models.deployment import Deployment  # Import deployment model for table creation
 from app.models.incident import Incident  # Import incident model for table creation
+from app.models.system_metric import SystemMetric  # Import system metric model for agent monitoring
+from app.models.agent_api_key import AgentApiKey  # Import agent API key model
 
 logger = logging.getLogger(__name__)
 

@@ -6,6 +6,7 @@ import {
   AlertCircle,
   Zap,
   Settings,
+  Server,
   LogOut,
   Menu,
   X,
@@ -23,6 +24,7 @@ export const Sidebar = ({ isOpen, onClose, onLogout }) => {
     { icon: Box, label: 'Docker', href: '/docker' },
     { icon: AlertCircle, label: 'Incidents', href: '/incidents' },
     { icon: Zap, label: 'Deployments', href: '/deployments' },
+    { icon: Server, label: 'Agent Monitoring', href: '/agent-dashboard' },
     { icon: MessageSquare, label: 'AI Assistant', href: '/ai-assistant' },
     { icon: Settings, label: 'Settings', href: '/settings' },
   ];

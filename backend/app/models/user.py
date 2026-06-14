@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from sqlalchemy import Boolean, Column, DateTime, Integer, String
+from sqlalchemy.orm import relationship
 
 from app.db.base import Base
 
@@ -27,3 +28,7 @@ class User(Base):
 
     # Timestamp for when the record was created.
     created_at = Column(DateTime(timezone=True), default=datetime.utcnow, nullable=False)
+
+    # Relationships to agent-related tables
+    system_metrics = relationship("SystemMetric", back_populates="user", cascade="all, delete-orphan")
+    agent_api_keys = relationship("AgentApiKey", back_populates="user", cascade="all, delete-orphan")

@@ -6,3 +6,4 @@ export { IncidentsPage } from './IncidentsPage';
 export { DeploymentsPage } from './DeploymentsPage';
 export { SettingsPage } from './SettingsPage';
 export { AIAssistantPage } from './AIAssistantPage';
+export { AgentDashboardPage } from './AgentDashboardPage';

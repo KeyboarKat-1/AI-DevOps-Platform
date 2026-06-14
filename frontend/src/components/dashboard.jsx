@@ -45,6 +45,51 @@ export const ChartCard = ({ title, children, className = '' }) => {
   );
 };
 
+export const HostCard = ({ host, onSelect, selected }) => {
+  const isOnline = host.last_seen_seconds_ago != null && host.last_seen_seconds_ago <= 60;
+  const lastSeenMinutes = host.last_seen_seconds_ago != null ? Math.floor(host.last_seen_seconds_ago / 60) : null;
+  const lastSeenText = host.last_seen_seconds_ago == null
+    ? 'Unknown'
+    : lastSeenMinutes >= 1
+      ? `${lastSeenMinutes}m ${host.last_seen_seconds_ago % 60}s ago`
+      : `${host.last_seen_seconds_ago}s ago`;
+
+  return (
+    <Card
+      className={`p-5 cursor-pointer transition-all ${selected ? 'border-primary-500 border-2' : 'border border-white/10'} hover:border-primary-500`}
+      onClick={() => onSelect(host.hostname)}
+    >
+      <div className="flex items-start justify-between gap-3 mb-4">
+        <div>
+          <h4 className="font-semibold text-white truncate">{host.hostname}</h4>
+          <p className="text-sm text-dark-400 truncate">{host.operating_system}</p>
+        </div>
+        <span className={`px-2 py-1 rounded-full text-xs font-semibold ${isOnline ? 'bg-emerald-500/15 text-emerald-300' : 'bg-red-500/15 text-red-300'}`}>
+          {isOnline ? 'Online' : 'Offline'}
+        </span>
+      </div>
+
+      <div className="grid grid-cols-3 gap-3 mb-4">
+        {[
+          { label: 'CPU', value: `${host.cpu_usage}%` },
+          { label: 'Memory', value: `${host.memory_usage}%` },
+          { label: 'Disk', value: `${host.disk_usage}%` },
+        ].map((item) => (
+          <div key={item.label} className="rounded-xl bg-dark-700/60 p-3">
+            <p className="text-xs text-dark-400">{item.label}</p>
+            <p className="text-base font-semibold text-white mt-1">{item.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex items-center justify-between text-sm text-dark-400">
+        <span>Last seen</span>
+        <span className="text-white">{lastSeenText}</span>
+      </div>
+    </Card>
+  );
+};
+
 export const ContainerCard = ({
   id,
   name,

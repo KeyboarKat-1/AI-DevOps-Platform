@@ -91,4 +91,15 @@ export const insightsService = {
     api.post('/api/insights/ai-suggestions', { context }),
 };
 
+export const agentMonitoringService = {
+  getLatestHosts: () =>
+    api.get('/api/agent/metrics/latest'),
+  getHostHistory: (hostname, hours = 24) =>
+    api.get(`/api/agent/metrics/history/${encodeURIComponent(hostname)}?hours=${hours}`),
+};
+
+export const agentInsightsService = {
+  getInsights: () => api.get('/api/agent/insights'),
+};
+
 export default api;

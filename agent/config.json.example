@@ -1,0 +1,11 @@
+{
+  "backend_url": "https://your-backend-url.com",
+  "api_key": "your_agent_api_key_here",
+  "interval_seconds": 10,
+  "hostname": "optional-override-hostname",
+  "verify_ssl": true,
+  "timeout_seconds": 10,
+  "max_retries": 3,
+  "retry_backoff": 0.5,
+  "log_level": "INFO"
+}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { MainLayout, AuthLayout } from './layouts';
 import {
@@ -10,6 +9,7 @@ import {
   DeploymentsPage,
   SettingsPage,
   AIAssistantPage,
+  AgentDashboardPage,
 } from './pages';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './routes/ProtectedRoute';
@@ -97,6 +97,16 @@ function AppContent() {
           <ProtectedRoute>
             <MainLayout user={user} onLogout={handleLogout}>
               <SettingsPage />
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/agent-dashboard"
+        element={
+          <ProtectedRoute>
+            <MainLayout user={user} onLogout={handleLogout}>
+              <AgentDashboardPage />
             </MainLayout>
           </ProtectedRoute>
         }
